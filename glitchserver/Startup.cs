@@ -15,7 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MySqlConnector;
 
-namespace glitchserver.Server
+namespace glitchserver
 {
     public class Startup
     {

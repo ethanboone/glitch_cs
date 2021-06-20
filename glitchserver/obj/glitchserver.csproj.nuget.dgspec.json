@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj": {}
+    "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj": {}
   },
   "projects": {
-    "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj": {
+    "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
+        "projectUniqueName": "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
         "projectName": "glitchserver",
-        "projectPath": "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
+        "projectPath": "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
         "packagesPath": "C:\\Users\\eboon\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\obj\\",
+        "outputPath": "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eboon\\AppData\\Roaming\\NuGet\\NuGet.Config"
