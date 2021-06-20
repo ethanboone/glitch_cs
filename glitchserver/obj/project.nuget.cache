@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+D8IVaFPqOFQU4hZwMVLSQcDHJmr0aPN3KTYLb1VXGTVaZfbTwgLwQm0gYux1n02QZy13FQ/39/x89mO5xudrA==",
+  "dgSpecHash": "lZU0XJAM6Ne7bHd1hyyLCs6l9t6HnIXWP0oH8+5mHQW8wx5B3oh/nl6lWkzlM/wMqHZ93BKVPVy/816ZmnvP2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
+  "projectFilePath": "c:\\Users\\eboon\\projects21\\glitch_cs\\glitchserver\\glitchserver.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eboon\\.nuget\\packages\\codeworks.auth0provider\\1.0.3\\codeworks.auth0provider.1.0.3.nupkg.sha512",
     "C:\\Users\\eboon\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
