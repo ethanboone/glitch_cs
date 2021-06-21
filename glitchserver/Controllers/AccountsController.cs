@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using glitchserver.Models;
 using glitchserver.Services;
 using CodeWorks.Auth0Provider;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace glitchserver.Controllers
 {
-    public class AccountsController
+    [ApiController]
+    [Route("[route]")]
+    public class AccountsController : ControllerBase
     {
         private readonly AccountsService _accountService;
 

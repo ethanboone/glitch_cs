@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MySqlConnector;
+using glitchserver.Services;
+using glitchserver.Repositories;
 
 namespace glitchserver
 {
@@ -39,6 +41,9 @@ namespace glitchserver
             });
 
             services.AddScoped<IDbConnection>(x => CreateDbConnection());
+            services.AddTransient<AccountsService>();
+            services.AddTransient<AccountsRepository>();
+
 
         }
 
