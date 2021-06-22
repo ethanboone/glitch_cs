@@ -12,11 +12,11 @@ namespace glitchserver.Controllers
     [Route("[route]")]
     public class AccountsController : ControllerBase
     {
-        private readonly AccountsService _accountService;
+        private readonly AccountsService _service;
 
-        public AccountsController(AccountsService accountService)
+        public AccountsController(AccountsService service)
         {
-            _accountService = accountService;
+            _service = service;
         }
 
         [HttpGet]
@@ -26,7 +26,7 @@ namespace glitchserver.Controllers
             try
             {
                 Account userInfo = await HttpContext.GetUserInfoAsync<Account>();
-                return Ok(_accountService.GetOrCreateProfile(userInfo));
+                return Ok(_service.GetOrCreateProfile(userInfo));
             }
             catch (Exception e)
             {
