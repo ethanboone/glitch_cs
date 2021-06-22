@@ -5,26 +5,26 @@ using System.Linq;
 using glitchserver.Models;
 using glitchserver.Repositories;
 
-namespace keeprserver.Services
+namespace glitchserver.Services
 {
-    public class AccountService
+    public class AccountsService
     {
-        private readonly AccountRepository _repo;
-        public AccountService(AccountRepository repo)
+        private readonly AccountsRepository _repo;
+        public AccountsService(AccountsRepository repo)
         {
             _repo = repo;
         }
-        internal Account GetOrCreateProfile(Account userInfo)
+        internal Account GetOrCreateAccount(Account userInfo)
         {
-            Account profile = _repo.GetById(userInfo.Id);
-            if (profile == null)
+            Account account = _repo.GetById(userInfo.Id);
+            if (account == null)
             {
                 return _repo.Create(userInfo);
             }
-            return profile;
+            return account;
         }
 
-        internal Profile GetProfileById(string id)
+        internal Account GetAccountById(string id)
         {
             return _repo.GetById(id);
         }

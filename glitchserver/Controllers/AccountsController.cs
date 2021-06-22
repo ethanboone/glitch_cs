@@ -5,6 +5,7 @@ using glitchserver.Services;
 using CodeWorks.Auth0Provider;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using glitchserver.Models;
 
 namespace glitchserver.Controllers
 {
@@ -26,7 +27,7 @@ namespace glitchserver.Controllers
             try
             {
                 Account userInfo = await HttpContext.GetUserInfoAsync<Account>();
-                return Ok(_service.GetOrCreateProfile(userInfo));
+                return Ok(_service.GetOrCreateAccount(userInfo));
             }
             catch (Exception e)
             {
