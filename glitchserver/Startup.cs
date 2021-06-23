@@ -41,8 +41,15 @@ namespace glitchserver
             });
 
             services.AddScoped<IDbConnection>(x => CreateDbConnection());
+
             services.AddTransient<AccountsService>();
             services.AddTransient<AccountsRepository>();
+
+            services.AddTransient<BugsService>();
+            services.AddTransient<BugsRepository>();
+
+            services.AddTransient<NotesService>();
+            services.AddTransient<NotesRepository>();
         }
 
         private void ConfigureCors(IServiceCollection services)
