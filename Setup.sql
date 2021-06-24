@@ -1,0 +1,29 @@
+-- CREATE TABLE IF NOT EXISTS accounts(
+--   id VARCHAR(255) NOT NULL primary key,
+--   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+--   updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   name varchar(255),
+--   email varchar(255),
+--   picture varchar(255)
+-- );
+CREATE TABLE IF NOT EXISTS bugs(
+  id VARCHAR(255) NOT NULL primary key,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  closed TINYINT NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  closedDate VARCHAR(255) NOT NULL,
+  creatorId VARCHAR(255) NOT NULL,
+  FOREIGN KEY (creatorId) references accounts(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS notes(
+  id VARCHAR(255) NOT NULL primary key,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  body VARCHAR(255) NOT NULL,
+  bugId TINYINT NOT NULL,
+  creatorId VARCHAR(255) NOT NULL,
+  FOREIGN KEY (creatorId) references accounts(id),
+  FOREIGN KEY (bugId) references bugs(id)
+);

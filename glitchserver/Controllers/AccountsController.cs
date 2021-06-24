@@ -10,7 +10,7 @@ using glitchserver.Models;
 namespace glitchserver.Controllers
 {
     [ApiController]
-    [Route("[route]")]
+    [Route("[controller]")]
     public class AccountsController : ControllerBase
     {
         private readonly AccountsService _service;
