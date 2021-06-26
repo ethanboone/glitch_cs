@@ -6,5 +6,6 @@ namespace glitchserver.Models
         public string Body { get; set; }
         public int BugId { get; set; }
         public string CreatorId { get; set; }
+        public Account Creator { get; set; }
     }
 }

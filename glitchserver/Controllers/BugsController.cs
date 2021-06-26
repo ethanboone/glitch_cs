@@ -82,7 +82,7 @@ namespace glitchserver.Controllers
                 Account user = await HttpContext.GetUserInfoAsync<Account>();
                 newBug.Id = id;
                 newBug.CreatorId = user.Id;
-                Bug resBug = _service.Edit(newBug);
+                Bug resBug = _service.Edit(id, newBug);
                 return Ok(resBug);
             }
             catch (System.Exception e)

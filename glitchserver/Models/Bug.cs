@@ -8,5 +8,6 @@ namespace glitchserver.Models
         public string Title { get; set; }
         public string CloseDate { get; set; }
         public string CreatorId { get; set; }
+        public Account Creator { get; set; }
     }
 }
