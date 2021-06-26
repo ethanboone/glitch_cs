@@ -20,5 +20,15 @@ namespace glitchserver.Services
         {
             throw new NotImplementedException();
         }
+
+        internal Bug Create(Bug newBug)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Bug Edit(Bug newBug)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
