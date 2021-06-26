@@ -47,5 +47,21 @@ namespace glitchserver.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<ActionResult<Bug>> Delete(int id)
+        {
+            Account user = await HttpContext.GetUserInfoAsync<Account>();
+            bool deleted = _service.Delete(id, user);
+            if (deleted)
+            {
+                return Ok("Successfully Deleted");
+            }
+            else
+            {
+                throw new System.Exception("Invalid/Incorrect Id");
+            }
+        }
     }
 }

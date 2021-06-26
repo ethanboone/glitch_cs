@@ -15,5 +15,10 @@ namespace glitchserver.Services
         {
             throw new NotImplementedException();
         }
+
+        internal bool Delete(int id, Account user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
