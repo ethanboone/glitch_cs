@@ -5,6 +5,6 @@ namespace glitchserver.Models
         public int Id { get; set; }
         public string Body { get; set; }
         public int BugId { get; set; }
-        public int CreatorId { get; set; }
+        public string CreatorId { get; set; }
     }
 }

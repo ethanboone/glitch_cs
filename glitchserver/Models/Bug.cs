@@ -7,6 +7,6 @@ namespace glitchserver.Models
         public string Description { get; set; }
         public string Title { get; set; }
         public string CloseDate { get; set; }
-        public int CreatorId { get; set; }
+        public string CreatorId { get; set; }
     }
 }

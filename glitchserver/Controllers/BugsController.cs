@@ -13,10 +13,12 @@ namespace glitchserver.Controllers
     public class BugsController : ControllerBase
     {
         private readonly BugsService _service;
+        private readonly NotesService _notesService;
 
-        public BugsController(BugsService service)
+        public BugsController(BugsService service, NotesService notesService)
         {
             _service = service;
+            _notesService = notesService;
         }
 
         [HttpGet]
@@ -52,15 +54,73 @@ namespace glitchserver.Controllers
         [Authorize]
         public async Task<ActionResult<Bug>> Delete(int id)
         {
-            Account user = await HttpContext.GetUserInfoAsync<Account>();
-            bool deleted = _service.Delete(id, user);
-            if (deleted)
+            try
             {
-                return Ok("Successfully Deleted");
+                Account user = await HttpContext.GetUserInfoAsync<Account>();
+                bool deleted = _service.Delete(id, user);
+                if (deleted)
+                {
+                    return Ok("Successfully Deleted");
+                }
+                else
+                {
+                    throw new System.Exception("Invalid/Incorrect Id");
+                }
             }
-            else
+            catch (System.Exception e)
             {
-                throw new System.Exception("Invalid/Incorrect Id");
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut]
+        [Authorize]
+        public async Task<ActionResult<Bug>> Edit(int id, [FromBody] Bug newBug)
+        {
+            try
+            {
+                Account user = await HttpContext.GetUserInfoAsync<Account>();
+                newBug.Id = id;
+                newBug.CreatorId = user.Id;
+                Bug resBug = _service.Edit(newBug);
+                return Ok(resBug);
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<Bug>> Create([FromBody] Bug newBug)
+        {
+            try
+            {
+                Account user = await HttpContext.GetUserInfoAsync<Account>();
+                newBug.CreatorId = user.Id;
+                Bug resBug = _service.Create(newBug);
+                return Ok(resBug);
+            }
+            catch (System.Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("{id}/notes")]
+        public ActionResult<List<Note>> GetAllNotes(int id)
+        {
+            try
+            {
+                List<Note> notes = _notesService.GetAllNotes(id);
+                return Ok(notes);
+            }
+            catch (System.Exception e)
+            {
+
+                return BadRequest(e.Message);
             }
         }
     }
