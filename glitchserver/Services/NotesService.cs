@@ -14,14 +14,14 @@ namespace glitchserver.Services
             _repo = repo;
         }
 
-        internal List<Note> GetAllNotes(int id)
+        internal List<Note> GetAll(int id)
         {
-            throw new NotImplementedException();
+            return _repo.GetAll(id);
         }
 
-        internal void Create(Note newNote)
+        internal Note Create(Note newNote)
         {
-            throw new NotImplementedException();
+            return _repo.Create(newNote);
         }
 
         internal bool Delete(int id, Account user)

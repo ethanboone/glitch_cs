@@ -114,7 +114,7 @@ namespace glitchserver.Controllers
         {
             try
             {
-                List<Note> notes = _notesService.GetAllNotes(id);
+                List<Note> notes = _notesService.GetAll(id);
                 return Ok(notes);
             }
             catch (System.Exception e)
